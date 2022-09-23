@@ -25,7 +25,7 @@
       vars:
         URL: task.example.com
 
-- name: variable from inventroy
+- name: variable from inventory
   hosts: all
   tasks:
     - name: Print URL
