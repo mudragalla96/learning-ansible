@@ -31,3 +31,25 @@
     - name: Print URL
       ansible.builtin.debug:
         msg: URL == {{ URL }}
+
+- name: Print fact
+  hosts: all
+  tasks:
+    - ansible.builtin.debug:
+        msg: Hostname = {{ ansible_hostname}}
+
+
+
+
+
+
+- name: Register a variable example
+  hosts: all
+  tasks:
+    - name: Get uptime
+      ansible.builtin.shell: uptime
+      register: out
+
+    - name: Print out register
+      ansible.builtin.debug:
+        msg: "{{out}}"
